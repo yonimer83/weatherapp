@@ -1,0 +1,32 @@
+
+<!-- <app-current></app-current> -->
+
+<!-- 
+<button (click)="loadForecast(1)">Tomorrow</button>
+<button (click)="loadForecast(5)">5 Days</button>
+<button (click)="loadForecast(10)">10 Days</button> -->
+<!-- <app-future [weatherCond]='forecast'></app-future> -->
+
+
+<ngb-tabset>
+  <ngb-tab title="Current">
+    <ng-template ngbTabContent>
+      <app-current></app-current>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Tomorrow">
+    <ng-template ngbTabContent>
+      <app-future [period]="2"></app-future>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="5 Days">
+    <ng-template ngbTabContent>
+      <app-future [period]="5"></app-future>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="10 Days">
+    <ng-template ngbTabContent>
+      <app-future [period]="10"></app-future>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

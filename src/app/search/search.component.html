@@ -1,0 +1,29 @@
+<div class="search-wrapper text-center my-2 px-5">
+  <form #weatherSearch="ngForm" class="form-inline" (ngSubmit)="onSubmit($event, loc.value)">
+      <div class="form-group" >
+      <div class="search_input">
+      <input
+        autocomplete="off"
+        id="typeahead-basic"
+        #loc="ngModel"
+        class="form-control mr-2"
+        [(ngModel)]="location"
+        name="location"
+        type="text"
+        placeholder="Search for location"
+        (keyup)='search(loc.value)'        
+        />
+
+        <div  class="suggestions" *ngIf="location.length && suggestions$ | async as suggestions">
+          <ul #listSuggestions>
+            <li (click)='selectSuggestion($event,suggestion.name); suggestions = [];' 
+            *ngFor="let suggestion of suggestions">
+              <span>{{suggestion.name}}</span></li>
+          </ul>
+        </div>
+        </div>
+      <button type="submit" class="btn btn-primary">search</button>
+    </div>
+  </form>
+  <br />
+</div>

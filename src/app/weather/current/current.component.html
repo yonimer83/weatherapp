@@ -1,0 +1,21 @@
+<div *ngIf="(tempUnit | async) as temp">
+  <h3 class="my-5">Weather now</h3>
+  <div class="weather-wrapper my-3 p-3 col-sm-12 col-md-4 col-lg-3">
+  <h5 class="condition">
+    {{ weatherCond?.current.condition.text }}<br />
+    <span *ngIf="temp === 'C'"><strong>{{ weatherCond?.current.temp_c | number:'1.0-0'}}&#8451; </strong><br />
+      feels like {{ weatherCond?.current.feelslike_c | number:'1.0-0'}}&#8451;</span>
+    <span *ngIf="temp === 'F'"><strong>{{ weatherCond?.current.temp_f | number:'1.0-0'}}&#8457; </strong><br />
+      feels like {{ weatherCond?.current.feelslike_f | number:'1.0-0'}}&#8457;</span>
+  </h5>
+  <div>
+    humidity: {{ weatherCond?.current.humidity }}%<br /> 
+      wind: {{ weatherCond?.current.wind_dir }}, {{ weatherCond?.current.wind_kph }} km/h
+  </div>
+  <div>
+    <img
+      [src]="weatherCond?.current.condition.icon"
+      [alt]=" weatherCond?.current.condition.text" />    
+  </div>
+  </div>
+</div>

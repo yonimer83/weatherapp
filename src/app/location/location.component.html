@@ -1,0 +1,11 @@
+<h1 class="my-5">
+  {{ location }}
+  <div class="saveLocBtn" *ngIf="!saved">
+    <button class="btn" (click)="saveLocation($event)">
+      <span class="btn btn-primary plusBtn" (click)="saveLocation($event)">
+        +
+      </span>
+      save location
+    </button>
+  </div>
+</h1>

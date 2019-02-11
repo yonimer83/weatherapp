@@ -1,0 +1,8 @@
+<div *ngIf="searches | async as search">
+  <small *ngIf="search.length">last searched: </small>
+  <div class="searchedLocationButton" *ngFor="let loc of search" >
+    <div class="removeBtn">
+      <button class="btnLink" (click)='loadSearch($event, loc)'>{{loc}}</button>
+      <button class="btn btn-primary" (click)='removeSearch($event, loc)'>-</button></div>
+  </div>
+</div>

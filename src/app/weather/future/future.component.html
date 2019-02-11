@@ -1,0 +1,29 @@
+<!-- {{location}} -->
+<div class="container px-0 mx-0">
+    <div class="row">
+      <div  *ngFor="let day of forecast; index as i"
+      [ngClass]="{'col-sm-12 col-md-3 col-lg-2 m-3 p-3 forecast-cell': true, 'tomorrow': tomorrow}">
+        <h5 *ngIf="tempUnit | async as temp">
+          {{ day?.date | date:'d MMM'}}<br />
+          <span *ngIf="temp === 'C'">
+              Average: {{ day?.day.avgtemp_c | number:'1.0-0'}}&#8451; <br />
+              ({{ day?.day.mintemp_c | number:'1.0-0'}}&#8451; / {{ day?.day.maxtemp_c | number:'1.0-0'}}&#8451;)</span>
+          <span *ngIf="temp === 'F'">
+              Average: {{ day?.day.avgtemp_f | number:'1.0-0'}}&#8457; <br />
+              ({{ day?.day.mintemp_f | number:'1.0-0' }}&#8457; / {{ day?.day.maxtemp_f |number:'1.0-0' }}&#8457;)</span>
+        </h5>
+
+        <div>
+          {{ day?.day.condition.text }}<br />
+          humidity: {{ day?.day.avghumidity }}%<br />
+          wind: {{ day?.day.maxwind_kph }} km/h<br />
+          <img
+            class="img-fluid"
+            [src]="day?.day.condition.icon"
+            [alt]="day?.day.condition.text"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+

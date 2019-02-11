@@ -1,0 +1,43 @@
+.search-wrapper {
+  .search_input{ 
+    position: relative;
+  ul{
+    padding-inline-start:0;
+    li{
+      list-style-type: none;
+      text-align: left;
+      background: white;
+      border: 1px solid #efefef;
+      border-top: 0;
+      &:hover{
+        cursor: pointer;
+      }
+      span{
+        padding: 5px;      
+        display: block;
+      }
+    }
+  }
+  .suggestions{
+    position: absolute;
+    margin-right: .5rem;
+    z-index: 10;
+  }
+}
+  .form-inline {
+    justify-content: center;
+    .form-control {
+      min-width: 250px;
+    }  
+  }
+  @media (max-width: 600px) {
+    padding: 0!important;
+    .form-group {
+      width: 100%;
+    }
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}

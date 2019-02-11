@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid p-0">
+  <nav class="navbar  navbar-light bg-light">
+    <a class="navbar-brand" href="#">{{ title }}</a>
+    <app-tempunit></app-tempunit>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="p-5">
+    <app-search></app-search>
+
+    <app-last-searched></app-last-searched>
+    <app-location [location]="location"></app-location>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
